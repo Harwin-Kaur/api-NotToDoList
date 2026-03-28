@@ -1,0 +1,17 @@
+{
+  "name": "api-ntdl",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "author": "harwin kaur",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

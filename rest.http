@@ -1,0 +1,17 @@
+# Not to do list api
+
+@baseUrl = http://localhost:3000
+
+### POST the task list
+
+
+
+### Get the task list
+
+
+
+### Update the task list
+
+
+
+### Delete the task list
