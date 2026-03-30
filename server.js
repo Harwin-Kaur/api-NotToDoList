@@ -1,13 +1,22 @@
-import express from 'express'
+  import express from 'express';
 
-const app = express()
-const PORT = 3000
+  const app = express();
+  const PORT = 8000;
 
-app.get('/', (req, res) => {
-  res.send('Hello World')
-})
+  import taskRouter from './src/router/taskRouter.js';
 
-app.listen(PORT, error => {
-    error ? console.log(error):
-  console.log(`Server is running on http://localhost:${PORT}`);
-})
+  app.use("/",(req, res) => {
+    res.json({
+      status: "success",
+      message: "todo",
+    });
+  });
+
+  app.get('/', (req, res) => {
+    res.send('Hello World')
+  })
+
+  app.listen(PORT, error => {
+      error ? console.log(error):
+    console.log(`Server is running on http://localhost:${PORT}`);
+  })

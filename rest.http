@@ -1,17 +1,17 @@
 # Not to do list api
 
-@baseUrl = http://localhost:3000
+@baseUrl = http://localhost:8000
+
+### Get request
+GET {{baseUrl}}
+
 
 ### POST the task list
-
-
-
-### Get the task list
-
-
+POST {{baseUrl}}
 
 ### Update the task list
-
+PUT {{baseUrl}}
 
 
 ### Delete the task list
+DELETE {{baseUrl}}
