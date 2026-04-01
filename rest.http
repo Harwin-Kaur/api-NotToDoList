@@ -1,6 +1,6 @@
 # Not to do list api
 
-@baseUrl = http://localhost:8000
+@baseUrl = http://localhost:8000/api/v1/task
 
 ### Get request
 GET {{baseUrl}}

@@ -5,12 +5,7 @@
 
   import taskRouter from './src/router/taskRouter.js';
 
-  app.use("/",(req, res) => {
-    res.json({
-      status: "success",
-      message: "todo",
-    });
-  });
+  app.use("/api/v1/tasks",taskRouter);
 
   app.get('/', (req, res) => {
     res.send('Hello World')
