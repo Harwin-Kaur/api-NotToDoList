@@ -2,12 +2,11 @@
 
 @baseUrl = http://localhost:8000/api/v1/task
 
-### Get request
-GET {{baseUrl}}
-
-
 ### POST the task list
 POST {{baseUrl}}
+
+### Get request
+GET {{baseUrl}}
 
 ### Update the task list
 PUT {{baseUrl}}
