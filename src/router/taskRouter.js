@@ -12,7 +12,9 @@ const router = express.Router()
 //     next();
 // });
 
-let fakeDB = [];
+let fakeDB = [{ id: 3, task: 'coding', hr: 5, type: 'entry' },
+  { id: 2, task: 'cooking', hr: 2, type: 'entry' },
+  { id: 1, task: 'Gym', hr: 1, type: 'entry' }];
 
 router.post("/", (req, res, next) => {
     // do your code here
@@ -32,18 +34,33 @@ router.get("/", (req, res, next) => {
         tasks: fakeDB,
     });
 });
-router.put("/", (req, res, next) => {
+router.patch("/", (req, res, next) => {
+
+    const {id, type} = req.body;
+    fakeDB = fakeDB.map((item) => {
+        if(item.id === id) {
+            item.type = type;
+            return item;
+        }else {
+            return item;
+        }
+    } );
     // do your code here
     res.json({
         status: "success",
-        message: "response from put",
+        message: "your task has been updated successfully",
     });
 });
-router.delete("/", (req, res, next) => {
+router.delete("/:id", (req, res, next) => {
     // do your code here
+
+    const {id} = req.params;
+    fakeDB = fakeDB.filter(item => item.id !== +id);
+
+    console.log(id);
     res.json({
         status: "success",
-        message: "response from delete",
+        message: "your task has been deleted successfully",
     });
 });
 

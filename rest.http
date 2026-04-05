@@ -7,16 +7,25 @@ POST {{baseUrl}}
 Content-Type: application/json
 
 {
-    "task": "Go to the gym",
-    "hr": 1
+    "id": 1,
+    "task": "Gym",
+    "hr": 1,
+    "type": "entry"
 }
 
 ### Get request
 GET {{baseUrl}}
 
 ### Update the task list
-PUT {{baseUrl}}
+# PUT {{baseUrl}}
 
+PATCH {{baseUrl}}
+Content-Type: application/json
+
+{
+    "id": 2,
+    "type": "bad"
+}
 
 ### Delete the task list
-DELETE {{baseUrl}}
+DELETE {{baseUrl}}/2
