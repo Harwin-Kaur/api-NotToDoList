@@ -1,9 +1,15 @@
 # Not to do list api
 
-@baseUrl = http://localhost:8000/api/v1/task
+@baseUrl = http://localhost:8000/api/v1/tasks
 
 ### POST the task list
 POST {{baseUrl}}
+Content-Type: application/json
+
+{
+    "task": "Go to the gym",
+    "hr": 1
+}
 
 ### Get request
 GET {{baseUrl}}

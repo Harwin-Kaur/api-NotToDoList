@@ -2,6 +2,11 @@
 
   const app = express();
   const PORT = 8000;
+  import morgan from 'morgan';
+
+  app.use(morgan('dev'));
+
+  app.use(express.json()); // this will help to parse the data coming from post method in json format
 
   import taskRouter from './src/router/taskRouter.js';
 

@@ -12,18 +12,24 @@ const router = express.Router()
 //     next();
 // });
 
+let fakeDB = [];
+
 router.post("/", (req, res, next) => {
     // do your code here
+    // console.log(req.body);// received the data as object in the body
+    fakeDB.push(req.body);
+    console.log(fakeDB);
     res.json({
-        status: "success",
-        message: "response from post",
+        status: "success", 
+        message: "New task has been added successfully",
     });
 });
 router.get("/", (req, res, next) => {
     // do your code here
     res.json({
         status: "success",
-        message: "response from get",
+        message: "Here are the lists of tasks",
+        tasks: fakeDB,
     });
 });
 router.put("/", (req, res, next) => {
