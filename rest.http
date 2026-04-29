@@ -8,7 +8,7 @@ Content-Type: application/json
 
 {
     "id": 1,
-    "task": "cooking",
+    "task": "gym",
     "hr": 1,
     "type": "entry"
 }
