@@ -4,7 +4,7 @@
 
 ### POST the task list
 POST {{baseUrl}}
-Content-Type: application
+Content-Type: application/json
 
 {
     "id": 1,
