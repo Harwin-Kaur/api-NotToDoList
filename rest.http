@@ -8,8 +8,8 @@ Content-Type: application/json
 
 {
     "id": 1,
-    "task": "studying",
-    "hr": 30,
+    "task": "cooking",
+    "hr": 60,
     "type": "entry"
 }
 
