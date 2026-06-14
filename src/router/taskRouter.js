@@ -31,7 +31,7 @@ router.get("/", (req, res, next) => {
     res.json({
         status: "success",
         message: "Here are the lists of tasks",
-        tasks: fakeDB,
+        tasks: [],
     });
 });
 router.patch("/", (req, res, next) => {
