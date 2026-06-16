@@ -1,16 +1,16 @@
 import express from 'express'
 const router = express.Router()
 
-// router.all("/", (req, res, next) => {
-//     // do your code here
+router.all("/", (req, res, next) => {
+    // do your code here
 
-//     // res.json({
-//     //     status: "success",
-//     //     message: "response from all",
-//     // });
+    // res.json({
+    //     status: "success",
+    //     message: "response from all",
+    // });
 
-//     next();
-// });
+    next();
+});
 
 let fakeDB = [{ id: 3, task: 'coding', hr: 5, type: 'entry' },
   { id: 2, task: 'cooking', hr: 2, type: 'entry' },
