@@ -1,7 +1,7 @@
 import express from 'express'
 const router = express.Router()
 
-router.all("/", (req, res, next) => {
+// router.all("/", (req, res, next) => {
     // do your code here
 
     // res.json({
@@ -9,8 +9,8 @@ router.all("/", (req, res, next) => {
     //     message: "response from all",
     // });
 
-    next();
-});
+//     next();
+// });
 
 let fakeDB = [{ id: 3, task: 'coding', hr: 5, type: 'entry' },
   { id: 2, task: 'cooking', hr: 2, type: 'entry' },
