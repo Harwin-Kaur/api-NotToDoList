@@ -4,6 +4,14 @@
   const PORT = 8000;
   import morgan from 'morgan';
 
+  //now write code to make mongo db available globally
+  
+  //Connect MongoDB
+  
+  import { connectMongoDB } from './src/config/dbConfig.js';
+  
+  connectMongoDB();
+
   app.use(morgan('dev'));
 
   app.use(express.json()); // this will help to parse the data coming from post method in json format
