@@ -1,16 +1,31 @@
-import express from 'express'
-const router = express.Router()
+import express from 'express';
+const router = express.Router();
+import moongose from 'mongoose';
 
-// router.all("/", (req, res, next) => {
+router.all("/", (req, res, next) => {
     // do your code here
 
-    // res.json({
-    //     status: "success",
-    //     message: "response from all",
-    // });
+    res.json({
+        status: "success",
+        message: "response from all",
+    });
 
-//     next();
-// });
+    next();
+});
+
+//database table selecting
+
+const taskSchema = new moongoose.Schema({}, {statics: false}) // this will allow us to crate schema
+const TaskCollection = moongoose.model("Task", taskSchema);
+
+router.post("/", async (req, res, next) => {
+ // do your code
+console.log(req.body, "------");
+
+ //inner task
+  const result = await TaskCollection(req.body)
+
+})
 
 let fakeDB = [{ id: 3, task: 'coding', hr: 5, type: 'entry' },
   { id: 2, task: 'cooking', hr: 2, type: 'entry' },
