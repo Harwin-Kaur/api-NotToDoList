@@ -2,7 +2,7 @@ import express from 'express';
 const router = express.Router();
 import moongose from 'mongoose';
 
-router.all("/", (req, res, next) => {
+// router.all("/", (req, res, next) => {
 //     // do your code here
 
 //     res.json({
