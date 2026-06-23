@@ -3,15 +3,15 @@ const router = express.Router();
 import moongose from 'mongoose';
 
 router.all("/", (req, res, next) => {
-    // do your code here
+//     // do your code here
 
-    res.json({
-        status: "success",
-        message: "response from all",
-    });
+//     res.json({
+//         status: "success",
+//         message: "response from all",
+//     });
 
-    next();
-});
+//     next();
+// });
 
 //database table selecting
 
