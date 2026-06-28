@@ -9,8 +9,8 @@ Content-Type: application/json
 {
     "id": 1,
     "task": "cooking",
-    "hr": 60,
-    "type": "entry"
+    "hr": "entry",
+    "type": 234
 }
 
 ### Get request
@@ -23,9 +23,9 @@ PATCH {{baseUrl}}
 Content-Type: application/json
 
 {
-    "id": 2,
-    "type": "bad"
+    "_id": "6a409a7e1f5a4801537966e9",
+    "task": "bad"
 }
 
 ### Delete the task list
-DELETE {{baseUrl}}/2
+DELETE {{baseUrl}}/6a409a7e1f5a4801537966e9

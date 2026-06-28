@@ -20,7 +20,7 @@
 
   app.use("/api/v1/tasks",taskRouter);
 
-  app.get('/', (req, req) => {
+  app.get('/', (req, res) => {
     res.send('Hello World')
   })
 
