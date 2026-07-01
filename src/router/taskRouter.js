@@ -15,31 +15,30 @@ import mongoose from 'mongoose';
 
 //database table selecting
 
-const taskSchema = new mongoose.Schema({}, {strict: false}) // this will allow us to crate schema
+const taskSchema = new mongoose.Schema({
+
+    task:{
+        type: String,
+        required: true,
+    },    
+    hr: {
+        type: String,
+        required: true,
+    },
+
+}); // this will allow us to crate schema
 const TaskCollection = mongoose.model("Task", taskSchema);
 
 router.post("/", async (req, res, next) => {
- // do your code
-console.log(req.body, "------");
 
- //insert task
-  const result = await TaskCollection(req.body).save();
-  console.log(result);
-})
+try{
+    
 
-let fakeDB = [{ id: 3, task: 'coding', hr: 5, type: 'entry' },
-  { id: 2, task: 'cooking', hr: 2, type: 'entry' },
-  { id: 1, task: 'Gym', hr: 1, type: 'entry' }];
+} catch(error){
+    console.log(error.message);
+}
 
-router.post("/", (req, res, next) => {
-    // do your code here
-    // console.log(req.body);// received the data as object in the body
-    fakeDB.push(req.body);
-    console.log(fakeDB);
-    res.json({
-        status: "success", 
-        message: "New task has been added successfully",
-    });
+
 });
 router.get("/", async (req, res, next) => {
 
