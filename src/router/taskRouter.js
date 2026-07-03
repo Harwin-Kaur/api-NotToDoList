@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose'; // we don't need to import mongoose here because we are importing it into a seperate file taskschema.js
 
 // router.all("/", (req, res, next) => {
 //     // do your code here
@@ -15,27 +15,53 @@ import mongoose from 'mongoose';
 
 //database table selecting
 
-const taskSchema = new mongoose.Schema({
+//to refactor the code, we can move the schema code below to separate file and import it here
 
-    task:{
-        type: String,
-        required: true,
-    },    
-    hr: {
-        type: String,
-        required: true,
-    },
+// const taskSchema = new mongoose.Schema({
 
-}); // this will allow us to crate schema
-const TaskCollection = mongoose.model("Task", taskSchema);
+//     task:{
+//         type: String,
+//         required: true,
+//     },    
+//     hr: {
+//         type: Number,
+//         required: true, //validation
+//         min: 1, //validation
+
+//         max: [100, "are you sure, it seems too much hours"], //validation
+//     },
+//     type: {
+//         type: String, 
+//         enum: ["entry", "bad"], //validation - this will only allow these two values to be inserted in the database
+//             },
+
+// },
+//     {
+//         timestamps: true,
+//     }); // this will allow us to crate schema
+// const TaskCollection = mongoose.model("Task", taskSchema);
 
 router.post("/", async (req, res, next) => {
 
 try{
     
+    //do your code
+console.log(req.body, "------");
+//insert task
+
+const result = await TaskCollection(req.body).save();
+console.log(result);
+res.json({
+    status: "success",
+    message: "New task has been added successfully",
+  });
 
 } catch(error){
     console.log(error.message);
+    res.json({
+    status: "error",
+    message: error.message,
+  });
 }
 
 

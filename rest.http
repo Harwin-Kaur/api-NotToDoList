@@ -8,7 +8,8 @@ Content-Type: application/json
 
 {
     "task": "coding",
-    "hr": "Sam"
+    "hr": 10,
+    "type": "entry"
 }
 
 ### Get request
