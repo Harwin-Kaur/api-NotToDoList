@@ -24,4 +24,21 @@ const taskSchema = new mongoose.Schema({
     }); 
 
      // this will allow us to crate schema
+    // const TaskCollection = mongoose.model("Task", taskSchema);
+
+    // export default mongoose.model("Task", taskSchema); // so we need to export the task schema so that and we can import it with any name because we used dafault keyword
+
     const TaskCollection = mongoose.model("Task", taskSchema);
+
+    export const insertTask = (taskObj)=>{
+        return TaskCollection(taskObj).save();
+    };
+    export const getTasks = ()=>{
+        return TaskCollection.find();
+    };
+    export const insertTask = (taskObj)=>{
+        return TaskCollection(taskObj).save();
+    };
+    export const insertTask = (taskObj)=>{
+        return TaskCollection(taskObj).save();
+    };

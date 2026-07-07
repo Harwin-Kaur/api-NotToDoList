@@ -1,5 +1,7 @@
 import express from 'express';
 const router = express.Router();
+import TaskCollection, { insertTask } from '../models/taskModels/TaskSchema.js'; // now we don't need to use TaskCollection name we can use second because we used default keyword in the export of taskSchema.js file
+
 // import mongoose from 'mongoose'; // we don't need to import mongoose here because we are importing it into a seperate file taskschema.js
 
 // router.all("/", (req, res, next) => {
@@ -46,10 +48,12 @@ router.post("/", async (req, res, next) => {
 try{
     
     //do your code
-console.log(req.body, "------");
+// console.log(req.body, "------");
 //insert task
 
-const result = await TaskCollection(req.body).save();
+// const result = await TaskCollection(req.body).save();
+
+const result = await insertTask(req.body);
 console.log(result);
 res.json({
     status: "success",
@@ -72,7 +76,8 @@ router.get("/", async (req, res, next) => {
     
     //db.c.find()
 
-    const tasks = await TaskCollection.find();
+    // const tasks = await TaskCollection.find();
+    const tasks = await getTasks();
 
     res.json({
         status: "success",
