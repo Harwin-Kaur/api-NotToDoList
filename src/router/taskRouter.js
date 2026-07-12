@@ -110,7 +110,7 @@ router.patch("/", async(req, res, next) => {
     // } );
     // do your code here
     res.json({
-        status: "success",
+        status: "successful",
         message: "your task has been updated successfully",
         result,
     });
