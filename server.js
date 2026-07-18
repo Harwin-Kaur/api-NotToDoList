@@ -10,7 +10,7 @@
   
   import { connectMongoDB } from './src/config/dbConfig.js';
   
-  connectMongoDB();
+  // connectMongoDB();
 
   app.use(morgan('dev'));
 
