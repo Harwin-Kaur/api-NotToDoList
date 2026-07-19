@@ -2,7 +2,7 @@
 
   const app = express();
   const PORT = 8000;
-  import morgan from 'morgan';
+  import morgan from 'morgan';  
 
   //now write code to make mongo db available globally
   
@@ -10,7 +10,7 @@
   
   import { connectMongoDB } from './src/config/dbConfig.js';
   
-  // connectMongoDB();
+  connectMongoDB();
 
   app.use(morgan('dev'));
 

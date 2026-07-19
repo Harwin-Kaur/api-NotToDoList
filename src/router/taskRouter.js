@@ -1,6 +1,6 @@
 import express from 'express';
 const router = express.Router();
-import { insertTask } from '../models/taskModels/TaskSchema.js'; // now we don't need to use TaskCollection name we can use second because we used default keyword in the export of taskSchema.js file
+import { deleteTask, getTasks, insertTask } from '../models/taskModels/TaskSchema.js'; // now we don't need to use TaskCollection name we can use second because we used default keyword in the export of taskSchema.js file
 
 // import mongoose from 'mongoose'; // we don't need to import mongoose here because we are importing it into a seperate file taskschema.js
 
@@ -80,6 +80,7 @@ router.get("/", async (req, res, next) => {
     // const tasks = await TaskCollection.find();
     const tasks = await getTasks();
 
+
     res.json({
         status: "success",
         message: "Here are the lists of tasks",
@@ -97,6 +98,7 @@ router.patch("/", async(req, res, next) => {
     // const result = await TaskCollection.findByIdAndUpdate(_id, rest, {new: true});
 
     const result = await updateTask(_id, rest);
+
 
 
 

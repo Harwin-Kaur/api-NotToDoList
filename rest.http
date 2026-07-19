@@ -22,9 +22,9 @@ PATCH {{baseUrl}}
 Content-Type: application/json
 
 {
-    "_id": "6a409a7e1f5a4801537966e9",
+    "_id": "6a409673e649f9949e6b077f",
     "task": "bad"
 }
 
 ### Delete the task list
-DELETE {{baseUrl}}/6a409a7e1f5a4801537966e9
+DELETE {{baseUrl}}/6a409673e649f9949e6b077f
