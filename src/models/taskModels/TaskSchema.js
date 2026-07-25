@@ -34,7 +34,7 @@ const taskSchema = new mongoose.Schema({
         return TaskCollection(taskObj).save();
     };
     export const getTasks = ()=>{
-        return TaskCollection.find();
+        // return TaskCollection.find();
     };
     export const updateTask = (_id, rest)=>{
         return TaskCollection.findByIdAndUpdate(_id, rest, {new: true});;
