@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose';
 
 const taskSchema = new mongoose.Schema({
 
@@ -39,6 +39,6 @@ const taskSchema = new mongoose.Schema({
     export const updateTask = (_id, rest)=>{
         return TaskCollection.findByIdAndUpdate(_id, rest, {new: true});;
     };  
-    // export const deleteTask = (_id)=>{
-    //     return TaskCollection.findByIdAndDelete(_id);
-    // };
+    export const deleteTask = (_id)=>{
+        return TaskCollection.findByIdAndDelete(_id);
+    };
